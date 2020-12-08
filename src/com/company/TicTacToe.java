@@ -22,7 +22,7 @@ public class TicTacToe extends Main {
 
         for (int i = 0; i < 9; i++) {
             cells[i] = " ";
-            available_cells[i] =  Integer.toString(i + 1);
+            available_cells[i] =  Integer.toString(i);
         }
     }
 

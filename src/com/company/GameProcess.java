@@ -63,7 +63,7 @@ public class GameProcess extends TicTacToe {
         System.out.println();
     }
 
-    public void checkWinner() {
+    private void checkWinner() {
         tictactoe.insertMove();
         tictactoe.getWinner();
     }
