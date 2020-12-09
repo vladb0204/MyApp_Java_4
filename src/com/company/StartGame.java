@@ -22,9 +22,9 @@ public class StartGame {
 
     public void printAvailableTable() {
         System.out.println("---------");
-        System.out.println("| " + available_cells[0] + " " + available_cells[1] + " " + available_cells[2] + " |");
-        System.out.println("| " + available_cells[3] + " " + available_cells[4] + " " + available_cells[5] + " |");
-        System.out.println("| " + available_cells[6] + " " + available_cells[7] + " " + available_cells[8] + " |");
+        System.out.println("| " + this.available_cells[0] + " " + this.available_cells[1] + " " + this.available_cells[2] + " |");
+        System.out.println("| " + this.available_cells[3] + " " + this.available_cells[4] + " " + this.available_cells[5] + " |");
+        System.out.println("| " + this.available_cells[6] + " " + this.available_cells[7] + " " + this.available_cells[8] + " |");
         System.out.println("---------");
     }
 }

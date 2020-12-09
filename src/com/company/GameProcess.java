@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class GameProcess extends TicTacToe {
+public class GameProcess extends com.company.TicTacToe {
 
     public Scanner sc = new Scanner(System.in);
     public StartGame start = new StartGame();
@@ -11,10 +11,11 @@ public class GameProcess extends TicTacToe {
     public void gameProcess() {
         start.Game();
         while (true) {
+            System.out.println();
             System.out.println(start.player_1 + " moves");
             checkWinner();
             if (checkMoves()) break;
-
+            System.out.println();
             System.out.println(start.player_2 + " moves");
             checkWinner();
             if (checkMoves()) break;
@@ -47,7 +48,7 @@ public class GameProcess extends TicTacToe {
                 scorePrint();
                 repeatProcess();
             } else {
-                System.out.println("Program executed");
+                System.out.println("Program terminated");
                 return true;
             }
         }

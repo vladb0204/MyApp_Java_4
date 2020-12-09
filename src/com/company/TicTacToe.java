@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class TicTacToe extends Main {
+public class TicTacToe extends com.company.Main {
 
     public Scanner sc = new Scanner(System.in);
     public StartGame start = new StartGame();
@@ -22,7 +22,7 @@ public class TicTacToe extends Main {
 
         for (int i = 0; i < 9; i++) {
             cells[i] = " ";
-            available_cells[i] =  Integer.toString(i);
+            this.available_cells[i] =  Integer.toString(i);
         }
     }
 
@@ -31,7 +31,7 @@ public class TicTacToe extends Main {
         int[] available = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         for (int i = 0; i < 9; i++) {
-            if (cells[i].equals(" ")) {
+            if (this.cells[i].equals(" ")) {
                 left_space += 1;
                 available[i] = 1;
             }
@@ -51,19 +51,19 @@ public class TicTacToe extends Main {
 
             if (move_in.equals("X")) {
                 getMove("X");
-                move_in = "O";
+                this.move_in = "O";
             } else {
                 getMove("O");
-                move_in = "X";
+                this.move_in = "X";
             }
         }
     }
 
     public void printTable() {
         System.out.println("---------");
-        System.out.println("| " + available_cells[0] + " " + available_cells[1] + " " + available_cells[2] + " |");
-        System.out.println("| " + available_cells[3] + " " + available_cells[4] + " " + available_cells[5] + " |");
-        System.out.println("| " + available_cells[6] + " " + available_cells[7] + " " + available_cells[8] + " |");
+        System.out.println("| " + this.available_cells[0] + " " + this.available_cells[1] + " " + this.available_cells[2] + " |");
+        System.out.println("| " + this.available_cells[3] + " " + this.available_cells[4] + " " + this.available_cells[5] + " |");
+        System.out.println("| " + this.available_cells[6] + " " + this.available_cells[7] + " " + this.available_cells[8] + " |");
         System.out.println("---------");
     }
 
@@ -94,11 +94,11 @@ public class TicTacToe extends Main {
         if (option == 0) {
 
             for (int[] elem : win_coord) {
-                if (cells[elem[0]].equals(cells[elem[1]]) && cells[elem[1]].equals(cells[elem[2]])
-                        && cells[elem[0]].equals(cells[elem[2]]) && !cells[elem[0]].equals(" ")) {
+                if (this.cells[elem[0]].equals(this.cells[elem[1]]) && this.cells[elem[1]].equals(this.cells[elem[2]])
+                        && this.cells[elem[0]].equals(this.cells[elem[2]]) && !this.cells[elem[0]].equals(" ")) {
                     printTable();
-                    System.out.println(cells[elem[0]] + " has won!!!");
-                    if (cells[elem[0]].equals("X")) {
+                    System.out.println(this.cells[elem[0]] + " has won!!!");
+                    if (this.cells[elem[0]].equals("X")) {
                         score_x += 1;
                     } else {
                         score_o += 1;
@@ -112,12 +112,12 @@ public class TicTacToe extends Main {
             int count_equals = 0;
 
             for (int[] elem : win_coord) {
-                if (cells[elem[0]].equals(cells[elem[1]]) && cells[elem[1]].equals(cells[elem[2]])
-                        && cells[elem[0]].equals(cells[elem[2]]) && !cells[elem[0]].equals(" ")) {
+                if (this.cells[elem[0]].equals(this.cells[elem[1]]) && this.cells[elem[1]].equals(this.cells[elem[2]])
+                        && this.cells[elem[0]].equals(this.cells[elem[2]]) && !this.cells[elem[0]].equals(" ")) {
                     printTable();
                     count_equals += 1;
-                    System.out.println(cells[elem[0]] + " has won!!!");
-                    if (cells[elem[0]].equals("X")) {
+                    System.out.println(this.cells[elem[0]] + " has won!!!");
+                    if (this.cells[elem[0]].equals("X")) {
                         score_x += 1;
                     } else {
                         score_o += 1;
@@ -151,11 +151,11 @@ public class TicTacToe extends Main {
         if (move_input < 0 || move_input > 8) {
             System.out.println("I can input numbers only from 0 to 8");
             getMove(input_cell);
-        } else if (!(cells[move_input].equals(" "))) {
+        } else if (!(this.cells[move_input].equals(" "))) {
             System.out.println("You can't input it here! This cell is occupied");
             getMove(input_cell);
         } else {
-            cells[move_input] = input_cell;
+            this.cells[move_input] = input_cell;
             available_cells[move_input] = input_cell;
         }
 
