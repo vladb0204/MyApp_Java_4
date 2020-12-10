@@ -136,13 +136,20 @@ public class TicTacToe extends com.company.Main {
     }
 
     private void getMove(String move_in) {
-        try {
-            move = sc.nextInt();
+        char move_1 = sc.next().charAt(0);
+
+        if (move_1 < 49 && move_1 > 57) {
+            while (true) {
+                System.out.println("You can input only numbers!!!");
+                move_1 = sc.next().charAt(0);
+
+                if (move_1 >= 49 && move_1 <= 57) {
+                    break;
+                }
+            }
         }
-        catch (InputMismatchException exception) {
-            System.out.println("You should input only numbers!!!");
-            getMove(move_in);
-        }
+
+        move = Character.getNumericValue(move_1);
         checkMove(move, move_in);
     }
 
